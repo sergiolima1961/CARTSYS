@@ -1,0 +1,1521 @@
+object FProspects: TFProspects
+  Left = 0
+  Top = 0
+  Caption = 'Gerenciamento de Prospects '
+  ClientHeight = 477
+  ClientWidth = 850
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object PC_Funil: TPageControl
+    Left = 0
+    Top = 0
+    Width = 850
+    Height = 477
+    ActivePage = TabSheet1
+    Align = alClient
+    Style = tsButtons
+    TabOrder = 0
+    OnChange = PC_FunilChange
+    object TabSheet1: TTabSheet
+      Caption = 'Suspeito / Conscientiza'#231#227'o'
+      object Panel1: TPanel
+        Left = 0
+        Top = 34
+        Width = 842
+        Height = 65
+        Align = alTop
+        BevelOuter = bvNone
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlue
+        Font.Height = -12
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        object Label4: TLabel
+          Left = 22
+          Top = 18
+          Width = 44
+          Height = 14
+          Caption = 'Contato'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label5: TLabel
+          Left = 36
+          Top = 43
+          Width = 25
+          Height = 14
+          Caption = 'Data'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label6: TLabel
+          Left = 261
+          Top = 43
+          Width = 46
+          Height = 14
+          Caption = 'Situacao'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBText1: TDBText
+          Left = 139
+          Top = 18
+          Width = 48
+          Height = 14
+          AutoSize = True
+          DataField = 'Contato'
+          DataSource = dsPROSPECTO
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlue
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBText2: TDBText
+          Left = 77
+          Top = 43
+          Width = 48
+          Height = 14
+          AutoSize = True
+          DataField = 'Data'
+          DataSource = dsPROSPECTO
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clNavy
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBText3: TDBText
+          Left = 348
+          Top = 45
+          Width = 48
+          Height = 14
+          AutoSize = True
+          DataField = 'Situacao'
+          DataSource = dsPROSPECTO
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlue
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object dblCliente: TDBLookupComboBox
+          Left = 76
+          Top = 13
+          Width = 57
+          Height = 22
+          DataField = 'ID_ENTIDADE'
+          DataSource = dsPROSPECTO
+          DropDownRows = 20
+          DropDownWidth = 360
+          KeyField = 'ID'
+          ListField = 'Contato;id'
+          ListFieldIndex = 1
+          ListSource = dsCliente
+          TabOrder = 0
+          OnExit = dblClienteExit
+        end
+      end
+      object Panel3: TPanel
+        Left = 0
+        Top = 0
+        Width = 842
+        Height = 34
+        Align = alTop
+        AutoSize = True
+        Caption = 'Panel1'
+        ShowCaption = False
+        TabOrder = 1
+        object Label16: TLabel
+          Left = 453
+          Top = 7
+          Width = 52
+          Height = 13
+          Caption = '0000/0000'
+        end
+        object Button1: TButton
+          Left = 1
+          Top = 1
+          Width = 60
+          Height = 32
+          Align = alLeft
+          Caption = 'Novo'
+          TabOrder = 0
+          OnClick = Button1Click
+        end
+        object Button2: TButton
+          Left = 241
+          Top = 1
+          Width = 60
+          Height = 32
+          Align = alLeft
+          Caption = 'Cancelar'
+          Enabled = False
+          TabOrder = 1
+          OnClick = Button2Click
+        end
+        object Button3: TButton
+          Left = 181
+          Top = 1
+          Width = 60
+          Height = 32
+          Align = alLeft
+          Caption = 'Gravar'
+          Enabled = False
+          TabOrder = 2
+          OnClick = Button3Click
+        end
+        object Button4: TButton
+          Left = 61
+          Top = 1
+          Width = 60
+          Height = 32
+          Align = alLeft
+          Caption = 'Editar'
+          TabOrder = 3
+          OnClick = Button4Click
+        end
+        object Button5: TButton
+          Left = 121
+          Top = 1
+          Width = 60
+          Height = 32
+          Align = alLeft
+          Caption = 'Excluir'
+          TabOrder = 4
+          OnClick = Button5Click
+        end
+        object BtFechar: TButton
+          Left = 301
+          Top = 1
+          Width = 60
+          Height = 32
+          Align = alLeft
+          Caption = 'Pesquisa..'
+          TabOrder = 5
+          OnClick = BtFecharClick
+        end
+        object btAplicar: TButton
+          Left = 361
+          Top = 1
+          Width = 75
+          Height = 32
+          Align = alLeft
+          Caption = 'Aplicar'
+          TabOrder = 6
+          OnClick = BtAplicarClick
+        end
+      end
+      object Pnl_Atividade: TPanel
+        Left = 0
+        Top = 190
+        Width = 842
+        Height = 164
+        Align = alTop
+        TabOrder = 2
+        object Panel4: TPanel
+          Left = 1
+          Top = 1
+          Width = 840
+          Height = 25
+          Align = alTop
+          AutoSize = True
+          Caption = 'Panel1'
+          ShowCaption = False
+          TabOrder = 0
+          object Label3: TLabel
+            Left = 381
+            Top = 6
+            Width = 52
+            Height = 13
+            Caption = '0000/0000'
+          end
+          object Button6: TButton
+            Left = 1
+            Top = 1
+            Width = 60
+            Height = 23
+            Align = alLeft
+            Caption = 'Novo'
+            TabOrder = 0
+            OnClick = Button6Click
+          end
+          object Button7: TButton
+            Left = 181
+            Top = 1
+            Width = 60
+            Height = 23
+            Align = alLeft
+            Caption = 'Cancelar'
+            Enabled = False
+            TabOrder = 1
+            OnClick = Button7Click
+          end
+          object Button8: TButton
+            Left = 121
+            Top = 1
+            Width = 60
+            Height = 23
+            Align = alLeft
+            Caption = 'Gravar'
+            Enabled = False
+            TabOrder = 2
+            OnClick = Button8Click
+          end
+          object Button10: TButton
+            Left = 61
+            Top = 1
+            Width = 60
+            Height = 23
+            Align = alLeft
+            Caption = 'Excluir'
+            TabOrder = 3
+            OnClick = Button10Click
+          end
+        end
+        object gbComentario: TGroupBox
+          Left = 1
+          Top = 74
+          Width = 840
+          Height = 89
+          Align = alClient
+          Caption = 'Coment'#225'rio'
+          TabOrder = 2
+          object DBRE_Comentario: TDBRichEdit
+            Left = 2
+            Top = 15
+            Width = 836
+            Height = 72
+            Align = alClient
+            DataField = 'Coment'#225'rio'
+            DataSource = dsAtividade
+            Font.Charset = ANSI_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ScrollBars = ssVertical
+            TabOrder = 0
+            Zoom = 100
+          end
+        end
+        object gb_Atividade: TGroupBox
+          Left = 1
+          Top = 26
+          Width = 840
+          Height = 48
+          Align = alTop
+          Caption = 'Atividade'
+          TabOrder = 1
+          object DBText5: TDBText
+            Left = 295
+            Top = 22
+            Width = 48
+            Height = 14
+            AutoSize = True
+            DataField = 'Atividade'
+            DataSource = dsAtividade
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlue
+            Font.Height = -12
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+          end
+          object Label1: TLabel
+            Left = 16
+            Top = 22
+            Width = 23
+            Height = 13
+            Caption = 'Data'
+            FocusControl = DBEdit1
+          end
+          object Label2: TLabel
+            Left = 180
+            Top = 22
+            Width = 45
+            Height = 13
+            Caption = 'Atividade'
+            FocusControl = DBEdit1
+          end
+          object DBLookupComboBox1: TDBLookupComboBox
+            Left = 232
+            Top = 21
+            Width = 57
+            Height = 21
+            DataField = 'TIP_ATIVIDADE'
+            DataSource = dsAtividade
+            DropDownRows = 15
+            DropDownWidth = 360
+            KeyField = 'ID'
+            ListField = 'DSC;ID'
+            ListFieldIndex = 1
+            ListSource = dsAtividade_Dsc
+            TabOrder = 1
+            OnExit = DBLookupComboBox1Exit
+          end
+          object DBEdit1: TDBEdit
+            Left = 45
+            Top = 21
+            Width = 81
+            Height = 21
+            DataField = 'Data'
+            DataSource = dsAtividade
+            TabOrder = 0
+          end
+        end
+      end
+      object DBGrid1: TDBGrid
+        Left = 0
+        Top = 99
+        Width = 842
+        Height = 91
+        Align = alTop
+        DataSource = dsPROSPECTO
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        TabOrder = 3
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+      object DBGrid2: TDBGrid
+        Left = 0
+        Top = 354
+        Width = 842
+        Height = 91
+        Align = alTop
+        DataSource = dsAtividade
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        TabOrder = 4
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Prospecto / interesse'
+      ImageIndex = 1
+      object Panel6: TPanel
+        Left = 0
+        Top = 0
+        Width = 842
+        Height = 34
+        Align = alTop
+        AutoSize = True
+        Caption = 'Panel1'
+        ShowCaption = False
+        TabOrder = 0
+        object Label7: TLabel
+          Left = 453
+          Top = 7
+          Width = 52
+          Height = 13
+          Caption = '0000/0000'
+        end
+        object Button15: TButton
+          Left = 1
+          Top = 1
+          Width = 60
+          Height = 32
+          Align = alLeft
+          Caption = 'Pesquisa..'
+          TabOrder = 0
+          OnClick = BtFecharClick
+        end
+        object Button16: TButton
+          Left = 61
+          Top = 1
+          Width = 75
+          Height = 32
+          Align = alLeft
+          Caption = 'Aplicar'
+          TabOrder = 1
+          OnClick = BtAplicarClick
+        end
+      end
+      object Panel7: TPanel
+        Left = 0
+        Top = 34
+        Width = 842
+        Height = 65
+        Align = alTop
+        BevelOuter = bvNone
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlue
+        Font.Height = -12
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+        object Label8: TLabel
+          Left = 22
+          Top = 18
+          Width = 44
+          Height = 14
+          Caption = 'Contato'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label9: TLabel
+          Left = 36
+          Top = 43
+          Width = 25
+          Height = 14
+          Caption = 'Data'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label10: TLabel
+          Left = 261
+          Top = 43
+          Width = 46
+          Height = 14
+          Caption = 'Situacao'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBText4: TDBText
+          Left = 139
+          Top = 18
+          Width = 48
+          Height = 14
+          AutoSize = True
+          DataField = 'Contato'
+          DataSource = dsPROSPECTO
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlue
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBText8: TDBText
+          Left = 77
+          Top = 43
+          Width = 48
+          Height = 14
+          AutoSize = True
+          DataField = 'Data'
+          DataSource = dsPROSPECTO
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clNavy
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBText9: TDBText
+          Left = 348
+          Top = 45
+          Width = 48
+          Height = 14
+          AutoSize = True
+          DataField = 'Situacao'
+          DataSource = dsPROSPECTO
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlue
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBLookupComboBox2: TDBLookupComboBox
+          Left = 76
+          Top = 13
+          Width = 57
+          Height = 22
+          DataField = 'ID_ENTIDADE'
+          DataSource = dsPROSPECTO
+          DropDownRows = 20
+          DropDownWidth = 360
+          KeyField = 'ID'
+          ListField = 'Contato;id'
+          ListFieldIndex = 1
+          ListSource = dsCliente
+          TabOrder = 0
+          OnExit = dblClienteExit
+        end
+      end
+      object DBGrid4: TDBGrid
+        Left = 0
+        Top = 99
+        Width = 842
+        Height = 91
+        Align = alTop
+        DataSource = dsPROSPECTO
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        TabOrder = 2
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+      object Panel8: TPanel
+        Left = 0
+        Top = 190
+        Width = 842
+        Height = 25
+        Align = alTop
+        AutoSize = True
+        Caption = 'Panel1'
+        ShowCaption = False
+        TabOrder = 3
+        object Label11: TLabel
+          Left = 381
+          Top = 6
+          Width = 52
+          Height = 13
+          Caption = '0000/0000'
+        end
+        object Button9: TButton
+          Left = 1
+          Top = 1
+          Width = 60
+          Height = 23
+          Align = alLeft
+          Caption = 'Novo'
+          TabOrder = 0
+          OnClick = Button6Click
+        end
+        object Button11: TButton
+          Left = 181
+          Top = 1
+          Width = 60
+          Height = 23
+          Align = alLeft
+          Caption = 'Cancelar'
+          Enabled = False
+          TabOrder = 1
+          OnClick = Button7Click
+        end
+        object Button12: TButton
+          Left = 121
+          Top = 1
+          Width = 60
+          Height = 23
+          Align = alLeft
+          Caption = 'Gravar'
+          Enabled = False
+          TabOrder = 2
+          OnClick = Button8Click
+        end
+        object Button13: TButton
+          Left = 61
+          Top = 1
+          Width = 60
+          Height = 23
+          Align = alLeft
+          Caption = 'Excluir'
+          TabOrder = 3
+          OnClick = Button10Click
+        end
+      end
+      object GroupBox1: TGroupBox
+        Left = 0
+        Top = 215
+        Width = 842
+        Height = 48
+        Align = alTop
+        Caption = 'Atividade'
+        TabOrder = 4
+        object DBText10: TDBText
+          Left = 295
+          Top = 22
+          Width = 55
+          Height = 14
+          AutoSize = True
+          DataField = 'Atividade'
+          DataSource = dsAtividade
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlue
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label12: TLabel
+          Left = 16
+          Top = 22
+          Width = 23
+          Height = 13
+          Caption = 'Data'
+          FocusControl = DBEdit2
+        end
+        object Label13: TLabel
+          Left = 180
+          Top = 22
+          Width = 45
+          Height = 13
+          Caption = 'Atividade'
+          FocusControl = DBEdit2
+        end
+        object DBLookupComboBox3: TDBLookupComboBox
+          Left = 232
+          Top = 21
+          Width = 57
+          Height = 21
+          DataField = 'TIP_ATIVIDADE'
+          DataSource = dsAtividade
+          DropDownRows = 15
+          DropDownWidth = 360
+          KeyField = 'ID'
+          ListField = 'DSC;ID'
+          ListFieldIndex = 1
+          ListSource = dsAtividade_Dsc
+          TabOrder = 1
+          OnExit = DBLookupComboBox1Exit
+        end
+        object DBEdit2: TDBEdit
+          Left = 45
+          Top = 21
+          Width = 81
+          Height = 21
+          DataField = 'Data'
+          DataSource = dsAtividade
+          TabOrder = 0
+        end
+      end
+      object GroupBox2: TGroupBox
+        Left = 0
+        Top = 263
+        Width = 842
+        Height = 90
+        Align = alTop
+        Caption = 'Coment'#225'rio'
+        TabOrder = 5
+        object DBRichEdit1: TDBRichEdit
+          Left = 2
+          Top = 15
+          Width = 838
+          Height = 73
+          Align = alClient
+          DataField = 'Coment'#225'rio'
+          DataSource = dsAtividade
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ScrollBars = ssVertical
+          TabOrder = 0
+          Zoom = 100
+        end
+      end
+      object DBGrid5: TDBGrid
+        Left = 0
+        Top = 353
+        Width = 842
+        Height = 91
+        Align = alTop
+        DataSource = dsAtividade
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        TabOrder = 6
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+    end
+    object TabSheet3: TTabSheet
+      Caption = 'Qualificado / Desejo'
+      ImageIndex = 2
+      object Panel2: TPanel
+        Left = 0
+        Top = 0
+        Width = 842
+        Height = 34
+        Align = alTop
+        AutoSize = True
+        Caption = 'Panel1'
+        ShowCaption = False
+        TabOrder = 0
+        object Label14: TLabel
+          Left = 453
+          Top = 7
+          Width = 52
+          Height = 13
+          Caption = '0000/0000'
+        end
+        object Button14: TButton
+          Left = 1
+          Top = 1
+          Width = 60
+          Height = 32
+          Align = alLeft
+          Caption = 'Pesquisa..'
+          TabOrder = 0
+          OnClick = BtFecharClick
+        end
+        object Button17: TButton
+          Left = 61
+          Top = 1
+          Width = 75
+          Height = 32
+          Align = alLeft
+          Caption = 'Aplicar'
+          TabOrder = 1
+          OnClick = BtAplicarClick
+        end
+      end
+      object Panel5: TPanel
+        Left = 0
+        Top = 34
+        Width = 842
+        Height = 65
+        Align = alTop
+        BevelOuter = bvNone
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlue
+        Font.Height = -12
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+        object Label15: TLabel
+          Left = 22
+          Top = 18
+          Width = 44
+          Height = 14
+          Caption = 'Contato'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label17: TLabel
+          Left = 36
+          Top = 43
+          Width = 25
+          Height = 14
+          Caption = 'Data'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label18: TLabel
+          Left = 261
+          Top = 43
+          Width = 46
+          Height = 14
+          Caption = 'Situacao'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBText6: TDBText
+          Left = 139
+          Top = 18
+          Width = 48
+          Height = 14
+          AutoSize = True
+          DataField = 'Contato'
+          DataSource = dsPROSPECTO
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlue
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBText7: TDBText
+          Left = 77
+          Top = 43
+          Width = 48
+          Height = 14
+          AutoSize = True
+          DataField = 'Data'
+          DataSource = dsPROSPECTO
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clNavy
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBText11: TDBText
+          Left = 348
+          Top = 45
+          Width = 55
+          Height = 14
+          AutoSize = True
+          DataField = 'Situacao'
+          DataSource = dsPROSPECTO
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlue
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBLookupComboBox4: TDBLookupComboBox
+          Left = 76
+          Top = 13
+          Width = 57
+          Height = 22
+          DataField = 'ID_ENTIDADE'
+          DataSource = dsPROSPECTO
+          DropDownRows = 20
+          DropDownWidth = 360
+          KeyField = 'ID'
+          ListField = 'Contato;id'
+          ListFieldIndex = 1
+          ListSource = dsCliente
+          TabOrder = 0
+          OnExit = dblClienteExit
+        end
+      end
+      object DBGrid6: TDBGrid
+        Left = 0
+        Top = 99
+        Width = 842
+        Height = 91
+        Align = alTop
+        DataSource = dsPROSPECTO
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        TabOrder = 2
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+      object Panel9: TPanel
+        Left = 0
+        Top = 190
+        Width = 842
+        Height = 25
+        Align = alTop
+        AutoSize = True
+        Caption = 'Panel1'
+        ShowCaption = False
+        TabOrder = 3
+        object Label19: TLabel
+          Left = 381
+          Top = 6
+          Width = 52
+          Height = 13
+          Caption = '0000/0000'
+        end
+        object Button18: TButton
+          Left = 1
+          Top = 1
+          Width = 60
+          Height = 23
+          Align = alLeft
+          Caption = 'Novo'
+          TabOrder = 0
+          OnClick = Button6Click
+        end
+        object Button19: TButton
+          Left = 181
+          Top = 1
+          Width = 60
+          Height = 23
+          Align = alLeft
+          Caption = 'Cancelar'
+          Enabled = False
+          TabOrder = 1
+          OnClick = Button7Click
+        end
+        object Button20: TButton
+          Left = 121
+          Top = 1
+          Width = 60
+          Height = 23
+          Align = alLeft
+          Caption = 'Gravar'
+          Enabled = False
+          TabOrder = 2
+          OnClick = Button8Click
+        end
+        object Button21: TButton
+          Left = 61
+          Top = 1
+          Width = 60
+          Height = 23
+          Align = alLeft
+          Caption = 'Excluir'
+          TabOrder = 3
+          OnClick = Button10Click
+        end
+      end
+      object GroupBox3: TGroupBox
+        Left = 0
+        Top = 215
+        Width = 842
+        Height = 48
+        Align = alTop
+        Caption = 'Atividade'
+        TabOrder = 4
+        object DBText12: TDBText
+          Left = 295
+          Top = 22
+          Width = 55
+          Height = 14
+          AutoSize = True
+          DataField = 'Atividade'
+          DataSource = dsAtividade
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlue
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label20: TLabel
+          Left = 16
+          Top = 22
+          Width = 23
+          Height = 13
+          Caption = 'Data'
+          FocusControl = DBEdit3
+        end
+        object Label21: TLabel
+          Left = 180
+          Top = 22
+          Width = 45
+          Height = 13
+          Caption = 'Atividade'
+          FocusControl = DBEdit3
+        end
+        object DBLookupComboBox5: TDBLookupComboBox
+          Left = 232
+          Top = 21
+          Width = 57
+          Height = 21
+          DataField = 'TIP_ATIVIDADE'
+          DataSource = dsAtividade
+          DropDownRows = 15
+          DropDownWidth = 360
+          KeyField = 'ID'
+          ListField = 'DSC;ID'
+          ListFieldIndex = 1
+          ListSource = dsAtividade_Dsc
+          TabOrder = 1
+          OnExit = DBLookupComboBox1Exit
+        end
+        object DBEdit3: TDBEdit
+          Left = 45
+          Top = 21
+          Width = 81
+          Height = 21
+          DataField = 'Data'
+          DataSource = dsAtividade
+          TabOrder = 0
+        end
+      end
+      object GroupBox4: TGroupBox
+        Left = 0
+        Top = 263
+        Width = 842
+        Height = 90
+        Align = alTop
+        Caption = 'Coment'#225'rio'
+        TabOrder = 5
+        object DBRichEdit2: TDBRichEdit
+          Left = 2
+          Top = 15
+          Width = 838
+          Height = 73
+          Align = alClient
+          DataField = 'Coment'#225'rio'
+          DataSource = dsAtividade
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ScrollBars = ssVertical
+          TabOrder = 0
+          Zoom = 100
+        end
+      end
+      object DBGrid7: TDBGrid
+        Left = 0
+        Top = 353
+        Width = 842
+        Height = 91
+        Align = alTop
+        DataSource = dsAtividade
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        TabOrder = 6
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+    end
+    object TabSheet4: TTabSheet
+      Caption = 'Cliente / A'#231#227'o'
+      ImageIndex = 3
+      object Panel10: TPanel
+        Left = 0
+        Top = 0
+        Width = 842
+        Height = 34
+        Align = alTop
+        AutoSize = True
+        Caption = 'Panel1'
+        ShowCaption = False
+        TabOrder = 0
+        object Label22: TLabel
+          Left = 453
+          Top = 7
+          Width = 52
+          Height = 13
+          Caption = '0000/0000'
+        end
+        object Button22: TButton
+          Left = 1
+          Top = 1
+          Width = 60
+          Height = 32
+          Align = alLeft
+          Caption = 'Pesquisa..'
+          TabOrder = 0
+          OnClick = BtFecharClick
+        end
+      end
+      object Panel11: TPanel
+        Left = 0
+        Top = 34
+        Width = 842
+        Height = 65
+        Align = alTop
+        BevelOuter = bvNone
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlue
+        Font.Height = -12
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+        object Label23: TLabel
+          Left = 22
+          Top = 18
+          Width = 44
+          Height = 14
+          Caption = 'Contato'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label24: TLabel
+          Left = 36
+          Top = 43
+          Width = 25
+          Height = 14
+          Caption = 'Data'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label25: TLabel
+          Left = 261
+          Top = 43
+          Width = 46
+          Height = 14
+          Caption = 'Situacao'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBText13: TDBText
+          Left = 139
+          Top = 18
+          Width = 55
+          Height = 14
+          AutoSize = True
+          DataField = 'Contato'
+          DataSource = dsPROSPECTO
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlue
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBText14: TDBText
+          Left = 77
+          Top = 43
+          Width = 55
+          Height = 14
+          AutoSize = True
+          DataField = 'Data'
+          DataSource = dsPROSPECTO
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clNavy
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBText15: TDBText
+          Left = 348
+          Top = 45
+          Width = 55
+          Height = 14
+          AutoSize = True
+          DataField = 'Situacao'
+          DataSource = dsPROSPECTO
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlue
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object DBLookupComboBox6: TDBLookupComboBox
+          Left = 76
+          Top = 13
+          Width = 57
+          Height = 22
+          DataField = 'ID_ENTIDADE'
+          DataSource = dsPROSPECTO
+          DropDownRows = 20
+          DropDownWidth = 360
+          KeyField = 'ID'
+          ListField = 'Contato;id'
+          ListFieldIndex = 1
+          ListSource = dsCliente
+          TabOrder = 0
+          OnExit = dblClienteExit
+        end
+      end
+      object DBGrid8: TDBGrid
+        Left = 0
+        Top = 99
+        Width = 842
+        Height = 91
+        Align = alTop
+        DataSource = dsPROSPECTO
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        TabOrder = 2
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+      object Panel12: TPanel
+        Left = 0
+        Top = 190
+        Width = 842
+        Height = 25
+        Align = alTop
+        AutoSize = True
+        Caption = 'Panel1'
+        ShowCaption = False
+        TabOrder = 3
+        object Label26: TLabel
+          Left = 381
+          Top = 6
+          Width = 52
+          Height = 13
+          Caption = '0000/0000'
+        end
+        object Button23: TButton
+          Left = 1
+          Top = 1
+          Width = 60
+          Height = 23
+          Align = alLeft
+          Caption = 'Novo'
+          TabOrder = 0
+          OnClick = Button6Click
+        end
+        object Button24: TButton
+          Left = 181
+          Top = 1
+          Width = 60
+          Height = 23
+          Align = alLeft
+          Caption = 'Cancelar'
+          Enabled = False
+          TabOrder = 1
+          OnClick = Button7Click
+        end
+        object Button25: TButton
+          Left = 121
+          Top = 1
+          Width = 60
+          Height = 23
+          Align = alLeft
+          Caption = 'Gravar'
+          Enabled = False
+          TabOrder = 2
+          OnClick = Button8Click
+        end
+        object Button26: TButton
+          Left = 61
+          Top = 1
+          Width = 60
+          Height = 23
+          Align = alLeft
+          Caption = 'Excluir'
+          TabOrder = 3
+          OnClick = Button10Click
+        end
+      end
+      object GroupBox5: TGroupBox
+        Left = 0
+        Top = 215
+        Width = 842
+        Height = 48
+        Align = alTop
+        Caption = 'Atividade'
+        TabOrder = 4
+        object DBText16: TDBText
+          Left = 295
+          Top = 22
+          Width = 55
+          Height = 14
+          AutoSize = True
+          DataField = 'Atividade'
+          DataSource = dsAtividade
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlue
+          Font.Height = -12
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label27: TLabel
+          Left = 16
+          Top = 22
+          Width = 23
+          Height = 13
+          Caption = 'Data'
+          FocusControl = DBEdit4
+        end
+        object Label28: TLabel
+          Left = 180
+          Top = 22
+          Width = 45
+          Height = 13
+          Caption = 'Atividade'
+          FocusControl = DBEdit4
+        end
+        object DBLookupComboBox7: TDBLookupComboBox
+          Left = 232
+          Top = 21
+          Width = 57
+          Height = 21
+          DataField = 'TIP_ATIVIDADE'
+          DataSource = dsAtividade
+          DropDownRows = 15
+          DropDownWidth = 360
+          KeyField = 'ID'
+          ListField = 'DSC;ID'
+          ListFieldIndex = 1
+          ListSource = dsAtividade_Dsc
+          TabOrder = 1
+          OnExit = DBLookupComboBox1Exit
+        end
+        object DBEdit4: TDBEdit
+          Left = 45
+          Top = 21
+          Width = 81
+          Height = 21
+          DataField = 'Data'
+          DataSource = dsAtividade
+          TabOrder = 0
+        end
+      end
+      object GroupBox6: TGroupBox
+        Left = 0
+        Top = 263
+        Width = 842
+        Height = 90
+        Align = alTop
+        Caption = 'Coment'#225'rio'
+        TabOrder = 5
+        object DBRichEdit3: TDBRichEdit
+          Left = 2
+          Top = 15
+          Width = 838
+          Height = 73
+          Align = alClient
+          DataField = 'Coment'#225'rio'
+          DataSource = dsAtividade
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ScrollBars = ssVertical
+          TabOrder = 0
+          Zoom = 100
+        end
+      end
+      object DBGrid9: TDBGrid
+        Left = 0
+        Top = 353
+        Width = 842
+        Height = 91
+        Align = alTop
+        DataSource = dsAtividade
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        TabOrder = 6
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+    end
+    object TabSheet5: TTabSheet
+      Caption = 'Agenda'
+      ImageIndex = 4
+      object DBGrid3: TDBGrid
+        Left = 0
+        Top = 0
+        Width = 442
+        Height = 446
+        Align = alClient
+        DataSource = dsAgenda
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+      end
+      object DBChart1: TDBChart
+        Left = 442
+        Top = 0
+        Width = 400
+        Height = 446
+        Title.Text.Strings = (
+          'UF')
+        Chart3DPercent = 95
+        Legend.Alignment = laTop
+        Legend.TextStyle = ltsPlain
+        View3DOptions.HorizOffset = -14
+        View3DOptions.Zoom = 88
+        Align = alRight
+        TabOrder = 1
+        DefaultCanvas = 'TGDIPlusCanvas'
+        PrintMargins = (
+          28
+          15
+          28
+          15)
+        ColorPaletteIndex = 13
+        object Series1: THorizBarSeries
+          BarBrush.Gradient.Direction = gdLeftRight
+          ColorEachPoint = True
+          ConePercent = 15
+          DataSource = DM_DB.FGProspecto
+          Transparency = 47
+          XLabelsSource = 'Localidade'
+          BarStyle = bsCone
+          Dark3D = False
+          Gradient.Direction = gdLeftRight
+          GradientRelative = True
+          MultiBar = mbSideAll
+          Sides = 3
+          XValues.Name = 'Bar'
+          XValues.Order = loNone
+          XValues.ValueSource = 'Frequencia'
+          YValues.Name = 'Y'
+          YValues.Order = loAscending
+        end
+      end
+    end
+  end
+  object dsCliente: TDataSource
+    AutoEdit = False
+    DataSet = DM_DB.FvCliente
+    Left = 760
+    Top = 64
+  end
+  object dsAtividade: TDataSource
+    AutoEdit = False
+    DataSet = DM_DB.fvAtividade
+    OnDataChange = dsAtividadeDataChange
+    Left = 736
+    Top = 248
+  end
+  object dsPROSPECTO: TDataSource
+    AutoEdit = False
+    DataSet = DM_DB.FvProspecto
+    OnDataChange = dsPROSPECTODataChange
+    Left = 624
+    Top = 80
+  end
+  object dsAtividade_Dsc: TDataSource
+    AutoEdit = False
+    DataSet = DM_DB.FvDscAtividades
+    Left = 752
+    Top = 184
+  end
+  object dsAgenda: TDataSource
+    DataSet = DM_DB.FvAgenda
+    Left = 360
+    Top = 272
+  end
+end
